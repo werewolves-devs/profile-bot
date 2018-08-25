@@ -74,7 +74,7 @@ class Profiles(object):
                     description="Please enter a valid bio",
                     color=Color.red()))
         else:
-            ProfileModel.update(gender=bio).where(ProfileModel.uid == ctx.author.id).execute()
+            ProfileModel.update(bio=bio).where(ProfileModel.uid == ctx.author.id).execute()
             if len(bio) > 500:
                 bio = bio[:500] + '\n...'
             bio = bio.replace('`', '`\u200b')
